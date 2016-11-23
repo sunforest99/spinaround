@@ -10,7 +10,6 @@ public class SMonsterLDown : MonoBehaviour
 {
     public bool bPosCheck;      // ???
     public bool bDie;           // 몬스터의 생존확인
-    public float fSpeed = 7f;   // 몬스터가 날아가는 속도
 
     public UISprite SMonsterSprite = null;     // 몬스터의 스프라이트
 
@@ -32,7 +31,7 @@ public class SMonsterLDown : MonoBehaviour
             if (bPosCheck == true && HGameMng.I.bTimeScale == true)     // 몬스터 스프라이트 켜주고 날라가기
             {
                 SMonsterSprite.enabled = true;
-                transform.Translate(WayGame.transform.up * fSpeed * Time.deltaTime);
+                transform.Translate(WayGame.transform.up * HGameMng.I.fMonSpeed * Time.deltaTime);
             }
         }
 

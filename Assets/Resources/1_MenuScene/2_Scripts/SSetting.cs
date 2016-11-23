@@ -39,5 +39,11 @@ public class SSetting : MonoBehaviour
             SettingAni.Play("SettingoffAni");
             bcheck = false;
         }
+
+        if(HMng.I.bPlayCheck == true)
+        {
+            HMng.I.bSettingCheck = false;
+            SettingAni.Play("SettingoffAni");
+        }
     }
 }

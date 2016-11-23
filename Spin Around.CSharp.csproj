@@ -256,15 +256,15 @@
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterRand.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterUp.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMosnterRight.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_0.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_1.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_2.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_3.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_4.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_5.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_6.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_7.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_8.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_0.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_1.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_2.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_3.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_4.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_5.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_6.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_7.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\MGroup\SMGroup_8.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SResultGroup.cs" />
     <Compile Include="Assets\Resources\3_ResultScene\2_Scripts\HGotoMenuSceneBtn.cs" />
   </ItemGroup>

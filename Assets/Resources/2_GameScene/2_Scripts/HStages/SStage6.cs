@@ -16,6 +16,7 @@ public class SStage6 : HState
 
     public override void Enter(params object[] oParams)
     {
+
         //SBombGame.SetActive(true);
         //SBombGame.transform.localPosition = new Vector2(1647f, -629f);
         Debug.Log("Here is SStage5");
@@ -24,7 +25,8 @@ public class SStage6 : HState
 
     public override void Execute()
     {
-       //CountScrp.CountTime();      // 카운트 시작!
+        HGameMng.I.ChangeMonster();
+        //CountScrp.CountTime();      // 카운트 시작!
 
         if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.2f) && HGameMng.I.bPlayerDie == true)
             SMonsterGroupScrp.CreateMonster();       // 막소환!

@@ -17,6 +17,7 @@ public class SStage5 : HState
 
     public override void Enter(params object[] oParams)
     {
+
         AngryBossAni.enabled = true;
 
         //MAudioPlayMng.I.Play("BGM", true, true);
@@ -26,6 +27,7 @@ public class SStage5 : HState
 
     public override void Execute()
     {
+        HGameMng.I.ChangeMonster();
         //CountScrp.CountTime();      // 카운트 시작!
 
         if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.01f) && HGameMng.I.bPlayerDie == true)

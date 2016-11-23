@@ -42,7 +42,6 @@ public class HGameMng : HSingleton<HGameMng>
     public SMGroup_6 SMGroup_6scrp = null;
     public SMGroup_7 SMGroup_7scrp = null;
 
-    //public SBulletGroup SBulletGroupScrp = null;       // 총알 스크립드 알아오기 (미사용)
     public GameObject SresultGame = null;            // 결과창 스크립트
     public SBomb SBombScrp = null;      // 폭탄 스크립트
 
@@ -60,12 +59,15 @@ public class HGameMng : HSingleton<HGameMng>
 
     public float fResultTime;       // 결과창에 사용할 생존시간
 
+    public float fMonSpeed = 5f;
+
     float[] getTIme = new float[(int)E_TIME.E_MAX];     // 타임함수의 변수
 
 
     void Awake()
     {
         nStage = 1;     // 스테이지 1
+        fMonSpeed = 5f;
 
         if (m_Instance == null)
             m_Instance = this;
@@ -80,81 +82,13 @@ public class HGameMng : HSingleton<HGameMng>
 
     void Update()
     {
-        //if (nMonDieCont >= 20)      // 몬스터가 다 죽으면 스테이지 넘어가기
-        //{
-        //    nStage++;
-        //    nMonDieCont = 0;
-        //}
-        //SMonsterGroupScrp.CreateMonster();
-
-        //if (TimeCtrl((int)E_TIME.E_BULLET_TIME, 0.2f))      // 총알 생성
-        //    SBulletGroupScrp.CreateBullet();
 
         if (bPlayerDie == true && nStage < (int)E_STAGE.E_MAX)
         {
             fResultTime += Time.deltaTime;
         }
 
-        if (bPlayerDie == true)
-        {
-            switch (nStage)        // 스테이지 들어가기
-            {
-                case (int)E_STAGE.E_STAGE1:
-                    HStageMng.I.ChangeScene("SStage1");
-                    break;
-                case (int)E_STAGE.E_STAGE2:
-                    HStageMng.I.ChangeScene("SStage2");
-                    break;
-                case (int)E_STAGE.E_STAGE3:
-                    HStageMng.I.ChangeScene("SStage3");
-                    break;
-                case (int)E_STAGE.E_STAGE4:
-                    HStageMng.I.ChangeScene("SStage4");
-                    break;
-                case (int)E_STAGE.E_STAGE5:
-                    HStageMng.I.ChangeScene("SStage5");
-                    break;
-                case (int)E_STAGE.E_STAGE6:
-                    if (SBombScrp.bBombDie == true)
-                    {
-                        if (SBombScrp.BombSAni.frameIndex == 5)
-                            HStageMng.I.ChangeScene("SStage6");
-                    }
-                    else
-                    {
-                        HStageMng.I.ChangeScene("SStage6");
-                    }
-                    break;
-                case (int)E_STAGE.E_MAX:
-                    if (SBombScrp.bBombDie == true)
-                    {
-                        if (SBombScrp.BombSAni.frameIndex == 5)
-                            HStageMng.I.ChangeScene("SLastScene");
-                    }
-                    else
-                    {
-                        HStageMng.I.ChangeScene("SLastScene");
-                    }
-                    break;
-            }
-        }
-
-        else
-        {
-            for (int i = 0; i < SMGroup_0scrp.SMonsterCtrlScrp.Length; i++)
-            {
-                SMGroup_0scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_1scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_2scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_3scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_4scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_5scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_6scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-                SMGroup_7scrp.SMonsterCtrlScrp[i].fSpeed = 0f;      // player가 죽으면 몬스터의 속도를 o으로
-            }
-
-            SresultGame.SetActive(true);        // 결과창 띄우기
-        }
+        HStageMng.I.ChangeScene();
     }
     void OnDestroy()
     {
@@ -169,5 +103,31 @@ public class HGameMng : HSingleton<HGameMng>
             return true;
         }
         return false;
+    }
+
+    public void ChangeMonster()
+    {
+        switch (nStage)
+        {
+            case 2:
+                nMonsterRrand = Random.Range(0,2);
+                break;
+
+            case 3:
+                nMonsterRrand = Random.Range(0, 3);
+                break;
+
+            case 4:
+                nMonsterRrand = Random.Range(0, 4);
+                break;
+
+            case 5:
+                nMonsterRrand = Random.Range(0, 5);
+                break;
+
+            case 6:
+                nMonsterRrand = Random.Range(0, 5);
+                break;
+        }
     }
 }

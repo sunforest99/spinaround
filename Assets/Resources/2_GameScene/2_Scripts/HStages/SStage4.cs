@@ -25,7 +25,8 @@ public class SStage4 : HState
     public int nNum;
 
     public override void Enter(params object[] oParams)
-    {
+    { 
+
         nNum = Random.Range(1, 3);
         //BossSprite.color = new Color(1f,0.35f,0.35f);     // 255, 90, 90
         //MAudioPlayMng.I.Play("BGM", true, true);
@@ -35,6 +36,7 @@ public class SStage4 : HState
 
     public override void Execute()
     {
+        HGameMng.I.ChangeMonster();
         //CountScrp.CountTime();      // 카운트 시작!
         if (HGameMng.I.TimeCtrl((int)E_TIME.E_RSPIN_TIME, 0.5f))
         {

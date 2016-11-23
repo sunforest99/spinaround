@@ -22,12 +22,14 @@ public class SStage3 : HState
 
     public override void Enter(params object[] oParams)
     {
+
         Debug.Log("Here is SStage3");
         HStageMng.I.ChangeInfo("현재 스테이지 는 SStage3");
     }
 
     public override void Execute()
     {
+        HGameMng.I.ChangeMonster();
         //CountScrp.CountTime();      // 카운트 시작!
 
         if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.25f) /*&& HGameMng.I.bTimeScale == true*/ && HGameMng.I.bPlayerDie == true)

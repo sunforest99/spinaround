@@ -23,13 +23,15 @@ public class SStage2 : HState
     public override void Enter(params object[] oParams)
     {
         nNum = Random.Range(1, 3);
-        //MAudioPlayMng.I.Play("BGM", true, true);
+
+
         Debug.Log("Here is SStage2");
         HStageMng.I.ChangeInfo("현재 스테이지 는 SStage2");
     }
 
     public override void Execute()
     {
+        HGameMng.I.ChangeMonster();
         //CountScrp.CountTime();      // 카운트 시작!
 
         if (HGameMng.I.TimeCtrl((int)E_TIME.E_RSPIN_TIME, 0.5f))
