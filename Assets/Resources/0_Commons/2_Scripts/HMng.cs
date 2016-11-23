@@ -6,6 +6,11 @@ public class HMng : HSingleton<HMng>
 {
     protected HMng() { }
 
+    public bool bPlayCheck;
+
+    public bool bSettingCheck;
+    public bool bSoundCheck;
+
     void Awake()
     {
         Screen.SetResolution(1280, 800, false);
@@ -17,6 +22,7 @@ public class HMng : HSingleton<HMng>
 
     void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         DontDestroyOnLoad(this);
     }
 

@@ -64,14 +64,14 @@ public class SCountGroup : MonoBehaviour
             {
                 ThirdNumGame.SetActive(false);
                 GoGame.SetActive(true);
-                HGameMng.I.bTimeScale = true;
+                //HGameMng.I.bTimeScale = true;
                 //Time.timeScale = 1f;
-                StartCoroutine("FirstCount");
+                StartCoroutine("GoCount");
             }
         }
     }
 
-    IEnumerator FirstCount()        // 0.5초뒤에 Go 지움
+    IEnumerator GoCount()        // 0.5초뒤에 Go 지움
     {
         yield return new WaitForSeconds(0.5f);
         

@@ -9,14 +9,20 @@ using MHomiLibrary;
 
 public class SStage2 : HState
 {
-    public SCountGroup CountScrp;       // 카운트 사용하기위해
-    public UISprite[] BossEyeSprite = null;      // 보스 스프라이트 (색 변경용)
+    //public SCountGroup CountScrp;       // 카운트 사용하기위해
+
+    public SMGroup_0 SMGroup_0scrp = null;     // 몬스터 스크립트 알아오기
+    public SMGroup_1 SMGroup_1scrp = null;
+    public SMGroup_2 SMGroup_2scrp = null;
+    public SMGroup_3 SMGroup_3scrp = null;
+
+    public GameObject SpinGame = null;
+
+    public int nNum;
 
     public override void Enter(params object[] oParams)
     {
-        BossEyeSprite[0].color = new Color(1f, 0.74f, 0.74f);//255, 189, 189
-        BossEyeSprite[1].color = new Color(1f, 0.74f, 0.74f);
-      
+        nNum = Random.Range(1, 3);
         //MAudioPlayMng.I.Play("BGM", true, true);
         Debug.Log("Here is SStage2");
         HStageMng.I.ChangeInfo("현재 스테이지 는 SStage2");
@@ -24,31 +30,66 @@ public class SStage2 : HState
 
     public override void Execute()
     {
-        CountScrp.CountTime();      // 카운트 시작!
+        //CountScrp.CountTime();      // 카운트 시작!
 
-        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.16f) && HGameMng.I.bTimeScale == true && HGameMng.I.bPlayerDie == true)      // 0.2 초마다 몬스터 생성
-            HGameMng.I.SMonsterGroupScrp.CreateMonster();
-
-        for (int i = 0; i < HGameMng.I.SMonsterGroupScrp.SMonsterCtrlScrp.Length; i++)
+        if (HGameMng.I.TimeCtrl((int)E_TIME.E_RSPIN_TIME, 0.5f))
         {
-            if (HGameMng.I.SMonsterGroupScrp.SMonsterCtrlScrp[i].bDie == false)     // 각각의 몬스터의 bDie가 false일때 랜덤이 돈뒤 몬스터에 적용(몬스터 종류 0 ~ 1)
+            switch (nNum)
             {
-                HGameMng.I.nMonsterRrand = Random.Range(0, 2);
-                HGameMng.I.SMonsterGroupScrp.SMonsterCtrlScrp[i].RandMonster();
+                case 1:
+                    if (HGameMng.I.nMonDieCont < 25)
+                        SpinGame.transform.Rotate(0f, 0f, 15f);
+                    else
+                        SpinGame.transform.Rotate(0f, 0f, -15f);
+                    break;
+
+                case 2:
+                    if (HGameMng.I.nMonDieCont < 25)
+                        SpinGame.transform.Rotate(0f, 0f, -15f);
+                    else
+                        SpinGame.transform.Rotate(0f, 0f, 15f);
+                    break;
+
+                default:
+                    nNum = Random.Range(0, 2);
+                    break;
             }
         }
+
+        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.25f) /*&& HGameMng.I.bTimeScale == true*/ && HGameMng.I.bPlayerDie == true)
+            Create();
+
+        if (HGameMng.I.nMonDieCont >= HGameMng.I.nStageMonMax[0])      // 몬스터가 다 죽으면 스테이지 넘어가기
+        {
+            HGameMng.I.nStage++;
+            HGameMng.I.nMonDieCont = 0;
+        }
+
     }
 
     public override void Exit()
     {
-        for (int i = 0; i < HGameMng.I.SMonsterGroupScrp.SMonsterCtrlScrp.Length; i++)      // 씬전환할때 초기화!
-            HGameMng.I.SMonsterGroupScrp.SMonsterCtrlScrp[i].Reset();
+        for (int i = 0; i < SMGroup_0scrp.SMonsterCtrlScrp.Length; i++)      // 씬전환할때 초기화!
+        {
+            SMGroup_0scrp.SMonsterCtrlScrp[i].Reset();
+            SMGroup_1scrp.SMonsterCtrlScrp[i].Reset();
+            SMGroup_2scrp.SMonsterCtrlScrp[i].Reset();
+            SMGroup_3scrp.SMonsterCtrlScrp[i].Reset();
+        }
 
-        CountScrp.nTimer = 0;       // 카운트 시간 초기화
+        //CountScrp.nTimer = 0;       // 카운트 시간 초기화
     }
 
     void OnDestroy()
     {
         //Debug.Log("OnDestroy()/HStage1.cs");
+    }
+
+    void Create()
+    {
+        SMGroup_0scrp.CreateMonster();
+        SMGroup_1scrp.CreateMonster();
+        SMGroup_2scrp.CreateMonster();
+        SMGroup_3scrp.CreateMonster();
     }
 }

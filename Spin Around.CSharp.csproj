@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4CACBB5B-47A7-4A07-9182-62EBBBC96504}</ProjectGuid>
+    <ProjectGuid>{358219B6-96FE-6C91-5A4B-6C22B441D031}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -222,7 +222,9 @@
     <Compile Include="Assets\Resources\0_LogoScene\2_Scripts\SLogoGroup.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\HGameSceneBtn.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SCircleRotate.cs" />
+    <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SCircleScale.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SLogoBtn.cs" />
+    <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SSetting.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\HBtns\HResultSceneBtn.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\HBtns\HStage1Btn.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\HBtns\HStage2Btn.cs" />
@@ -245,8 +247,24 @@
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SCountGroup.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SEyeMove.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SGunMove.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMonsterCtrl.cs" />
-    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMonsterGroup.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterDown.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterLDown.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterLUp.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterLeft.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterRDown.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterRUp.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterRand.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMonsterUp.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\Ctrl\SMosnterRight.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_0.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_1.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_2.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_3.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_4.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_5.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_6.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_7.cs" />
+    <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SMonster\SMGroup_8.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\SResultGroup.cs" />
     <Compile Include="Assets\Resources\3_ResultScene\2_Scripts\HGotoMenuSceneBtn.cs" />
   </ItemGroup>

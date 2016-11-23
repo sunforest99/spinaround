@@ -17,10 +17,11 @@ public class SLogoBtn : MonoBehaviour
     public void PlayBtn()       // 시작
     {
         Debug.Log("Play");
+        HMng.I.bPlayCheck = true;
         //HGameMng.I.bPlayerDie = true;
-        Application.LoadLevel("2_Gamescene");
+        //Application.LoadLevel("2_Gamescene");
     }
-    
+
     public void RankBtn()       // 랭크
     {
         Debug.Log("Rank");
@@ -44,6 +45,10 @@ public class SLogoBtn : MonoBehaviour
     public void SettingBtn()        // 설정
     {
         Debug.Log("Setting");
+        if (HMng.I.bSettingCheck == false)
+            HMng.I.bSettingCheck = true;
+        else
+            HMng.I.bSettingCheck = false;
     }
 
     public void Restart()       // 재시작
@@ -53,6 +58,22 @@ public class SLogoBtn : MonoBehaviour
 
     public void Home()
     {
+        HMng.I.bPlayCheck = false;
         Application.LoadLevel("1_Menuscene");
+    }
+
+    public void Sound()
+    {
+        if (HMng.I.bSoundCheck == false)
+        {
+            HMng.I.bSoundCheck = true;
+           // HSoundMng.I.Stop();
+        }
+
+        else
+        {
+            HMng.I.bSoundCheck = false;
+           // HSoundMng.I.Play("Psychedelic-trip", true, true);
+        }
     }
 }
