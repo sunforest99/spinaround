@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 /// <summary>
@@ -64,7 +65,7 @@ public class SCircleScale : MonoBehaviour
             }
             if (CircleAni.isPlaying == false)
             {
-                Application.LoadLevel("2_Gamescene");
+                SceneManager.LoadScene("2_Gamescene");
             }
 
             for (int i = 0; i < BtnGame.Length; i++)

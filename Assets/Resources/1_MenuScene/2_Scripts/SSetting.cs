@@ -19,7 +19,7 @@ public class SSetting : MonoBehaviour
         if(HMng.I.bSoundCheck == false)
         {
             SoundBtnSprite.spriteName = "Sound";
-            HSoundMng.I.Stop();
+            HSoundMng.I.Stop(false);
         }
 
         else
@@ -40,7 +40,7 @@ public class SSetting : MonoBehaviour
             bcheck = false;
         }
 
-        if(HMng.I.bPlayCheck == true)
+        if(HMng.I.bPlayCheck == true && bcheck == true)
         {
             HMng.I.bSettingCheck = false;
             SettingAni.Play("SettingoffAni");

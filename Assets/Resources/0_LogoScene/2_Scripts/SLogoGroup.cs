@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SLogoGroup : MonoBehaviour
@@ -17,7 +18,7 @@ public class SLogoGroup : MonoBehaviour
         {
             HSoundMng.I.Play("Psychedelic-trip", true, true);
 
-            Application.LoadLevel("1_Menuscene");
+            SceneManager.LoadScene("1_Menuscene");
         }
     }
 }

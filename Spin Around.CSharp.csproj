@@ -223,6 +223,7 @@
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\HGameSceneBtn.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SCircleRotate.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SCircleScale.cs" />
+    <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SExitGroup.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SLogoBtn.cs" />
     <Compile Include="Assets\Resources\1_MenuScene\2_Scripts\SSetting.cs" />
     <Compile Include="Assets\Resources\2_GameScene\2_Scripts\HBtns\HResultSceneBtn.cs" />

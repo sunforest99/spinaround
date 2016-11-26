@@ -11,6 +11,8 @@ public class HMng : HSingleton<HMng>
     public bool bSettingCheck;
     public bool bSoundCheck;
 
+    public bool bExitCheck;
+
     void Awake()
     {
         Screen.SetResolution(1280, 800, false);

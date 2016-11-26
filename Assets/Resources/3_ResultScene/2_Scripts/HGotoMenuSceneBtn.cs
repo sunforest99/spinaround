@@ -5,6 +5,6 @@ public class HGotoMenuSceneBtn : MonoBehaviour {
 
     public void OnClick()
     {
-        Application.LoadLevel(1);
+        //Application.LoadLevel(1);
     }
 }

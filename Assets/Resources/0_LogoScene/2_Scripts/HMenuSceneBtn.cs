@@ -6,6 +6,6 @@ public class HMenuSceneBtn : MonoBehaviour {
     public void OnClick()
     {
         HSoundMng.I.Play("Tap");
-        Application.LoadLevel(1);
+        //Application.LoadLevel(1);
     }
 }
