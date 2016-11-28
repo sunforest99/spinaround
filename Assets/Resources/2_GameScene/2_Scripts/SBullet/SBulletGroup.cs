@@ -16,7 +16,7 @@ public class SBulletGroup : MonoBehaviour
     {
         for (int i = 0; i < SBulletScrp.Length; i++)
         {
-            if (SBulletScrp[i].bDie == false)       // 총알이 생성되지 않았을때 초기화후 생성
+            if (!SBulletScrp[i].bDie)       // 총알이 생성되지 않았을때 초기화후 생성
             {
                 SBulletScrp[i].transform.localPosition = SPlayerGame.transform.localPosition;
                 SBulletScrp[i].transform.localRotation = SPlayerGame.transform.localRotation;

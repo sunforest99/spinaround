@@ -14,12 +14,13 @@ public class SMGroup_0 : MonoBehaviour
     {
         for (int i = 0; i < SMonsterCtrlScrp.Length; i++)
         {
-            if (SMonsterCtrlScrp[i].bDie == false)
+            if (!SMonsterCtrlScrp[i].bPosCheck)
             {
-                if(SMonsterCtrlScrp[i].bPosCheck == false)
-                {
-                    SMonsterCtrlScrp[i].RandMonster();
-                }
+                SMonsterCtrlScrp[i].RandMonster();
+            }
+
+            if (!SMonsterCtrlScrp[i].bDie)
+            {
 
                 SMonsterCtrlScrp[i].bPosCheck = true;
 

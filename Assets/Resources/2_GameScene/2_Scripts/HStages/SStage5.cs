@@ -30,7 +30,7 @@ public class SStage5 : HState
         HGameMng.I.ChangeMonster();
         //CountScrp.CountTime();      // 카운트 시작!
 
-        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.01f) && HGameMng.I.bPlayerDie == true)
+        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.01f) && HGameMng.I.bPlayerDie)
             SMonsterGroupScrp.CreateMonster();       // 막소환!
 
         if (HGameMng.I.nMonDieCont >= HGameMng.I.nStageMonMax[2])      // 몬스터가 다 죽으면 스테이지 넘어가기
@@ -48,8 +48,6 @@ public class SStage5 : HState
             SMonsterGroupScrp.SMonsterCtrlScrp[i].Reset();
 
         SBombGame.SetActive(false);
-
-        //HGameMng.I.bTimeScale = false;
 
         //CountScrp.nTimer = 0;       // 카운트 시간 초기화
     }

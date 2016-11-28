@@ -38,14 +38,14 @@ public class SCircleScale : MonoBehaviour
 
     void Update()
     {
-        if (BackLayerTween.enabled == false)
+        if (!BackLayerTween.enabled)
         {
-            if (bInitAniCheck == false)
+            if (!bInitAniCheck)
             {
                 CircleAni.Play("InitMenuAni");
                 bInitAniCheck = true;
             }
-            if (CircleAni.isPlaying == false)
+            if (!CircleAni.isPlaying)
             {
                 for (int i = 0; i < BtnGame.Length; i++)
                 {
@@ -56,14 +56,14 @@ public class SCircleScale : MonoBehaviour
             }
         }
 
-        if (HMng.I.bPlayCheck == true)
+        if (HMng.I.bPlayCheck)
         {
-            if (bExitAniCheck == false)
+            if (!bExitAniCheck)
             {
                 CircleAni.Play("ExitMenuAni");
                 bExitAniCheck = true;
             }
-            if (CircleAni.isPlaying == false)
+            if (!CircleAni.isPlaying)
             {
                 SceneManager.LoadScene("2_Gamescene");
             }
@@ -71,10 +71,6 @@ public class SCircleScale : MonoBehaviour
             for (int i = 0; i < BtnGame.Length; i++)
             {
                 BtnSprite[i].alpha -= 0.05f;
-                //BtnButton[i].enabled = false;
-                //BtnTween[i].from = 1f;
-                //BtnTween[i].to = 0f;
-                //BtnTween[i].ResetToBeginning();
             }
         }
     }

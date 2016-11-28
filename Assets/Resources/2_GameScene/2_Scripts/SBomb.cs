@@ -49,23 +49,19 @@ public class SBomb : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("SPlayer") && HGameMng.I.bTimeScale == true)       // player 가 아이템을 먹을때 bBombDie 를 true 로
+        if (col.CompareTag("SPlayer") && HGameMng.I.bTimeScale)       // player 가 아이템을 먹을때 bBombDie 를 true 로
         {
             BombSprite.enabled = false;
             HGameMng.I.SBombScrp.bBombDie = true;
-            //transform.localPosition = Vector3.zero;
-            //bBombDie = true;
         }
     }
 
     void OnTriggerStay2D(Collider2D col)
     {
-        if (col.CompareTag("SPlayer") && HGameMng.I.bTimeScale == true)       // player 가 아이템을 먹을때 bBombDie 를 true 로
+        if (col.CompareTag("SPlayer") && HGameMng.I.bTimeScale)       // player 가 아이템을 먹을때 bBombDie 를 true 로
         {
             BombSprite.enabled = false;
             HGameMng.I.SBombScrp.bBombDie = true;
-            //transform.localPosition = Vector3.zero;
-            //bBombDie = true;
         }
     }
 }

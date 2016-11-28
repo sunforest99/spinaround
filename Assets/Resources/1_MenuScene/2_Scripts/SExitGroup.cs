@@ -19,18 +19,18 @@ public class SExitGroup : MonoBehaviour
 
     void Ani()
     {
-        if(HMng.I.bExitCheck == true && bCheck == false)
+        if(HMng.I.bExitCheck && !bCheck)
         {
             ExitAni.Play("ExitonAni");
             bCheck = true;
         }
-        if(HMng.I.bExitCheck == false && bCheck == true)
+        if(!HMng.I.bExitCheck&& bCheck)
         {
             ExitAni.Play("ExitoffAni");
             bCheck = false;
         }
 
-        if (HMng.I.bPlayCheck == true && bCheck == true)
+        if (HMng.I.bPlayCheck && bCheck)
         {
             HMng.I.bExitCheck = false;
             ExitAni.Play("ExitoffAni");

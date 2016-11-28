@@ -31,17 +31,17 @@ public class SStage1 : HState
     public override void Execute()
     {
         //CountScrp.CountTime();      // 카운트 시작!
-        if (StartAnni.isPlaying == false)
+        if (!StartAnni.isPlaying)
         {
             MouthAni.enabled = true;
         }
 
-        if(MouthAni.frameIndex == 4)
+        if(MouthAni.frameIndex.Equals(4))
         {
             HGameMng.I.bTimeScale = true;
         }
 
-        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.25f) /*&& HGameMng.I.bTimeScale == true*/ && HGameMng.I.bPlayerDie == true)
+        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.25f) && HGameMng.I.bPlayerDie)
             Create();
 
         if (HGameMng.I.nMonDieCont >= HGameMng.I.nStageMonMax[0])      // 몬스터가 다 죽으면 스테이지 넘어가기
@@ -76,15 +76,4 @@ public class SStage1 : HState
         SMGroup_3scrp.CreateMonster();
     }
 
-    //void ChageMSprite()
-    //{
-    //    for (int i = 0; i < SMGroup_0scrp.SMonsterCtrlScrp.Length; i++)
-    //    {
-    //        if (SMGroup_0scrp.SMonsterCtrlScrp[i].bDie == false)     // 각각의 몬스터의 bDie가 false일때 랜덤이 돈뒤 몬스터에 적용(몬스터 종류 0)
-    //        {
-    //            HGameMng.I.nMonsterRrand = 0;
-    //            SMGroup_0scrp.SMonsterCtrlScrp[i].RandMonster();
-    //        }
-    //    }
-    //}
 }

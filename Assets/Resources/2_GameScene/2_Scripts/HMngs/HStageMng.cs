@@ -37,45 +37,45 @@ public class HStageMng : HSingletonScene<HStageMng> {
 
     public void ChangeScene()
     {
-        if (HGameMng.I.bPlayerDie == true)
+        if (HGameMng.I.bPlayerDie)
         {
             switch (HGameMng.I.nStage)        // 스테이지 들어가기
             {
                 case (int)E_STAGE.E_STAGE1:
-                    HStageMng.I.ChangeScene("SStage1");
+                    ChangeScene("SStage1");
                     break;
                 case (int)E_STAGE.E_STAGE2:
-                    HStageMng.I.ChangeScene("SStage2");
+                    ChangeScene("SStage2");
                     break;
                 case (int)E_STAGE.E_STAGE3:
-                    HStageMng.I.ChangeScene("SStage3");
+                    ChangeScene("SStage3");
                     break;
                 case (int)E_STAGE.E_STAGE4:
-                    HStageMng.I.ChangeScene("SStage4");
+                    ChangeScene("SStage4");
                     break;
                 case (int)E_STAGE.E_STAGE5:
-                    HStageMng.I.ChangeScene("SStage5");
+                    ChangeScene("SStage5");
                     break;
                 case (int)E_STAGE.E_STAGE6:
-                    if (HGameMng.I.SBombScrp.bBombDie == true)
+                    if (HGameMng.I.SBombScrp.bBombDie)
                     {
-                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex == 5)
-                            HStageMng.I.ChangeScene("SStage6");
+                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex.Equals(5))
+                            ChangeScene("SStage6");
                     }
                     else
                     {
-                        HStageMng.I.ChangeScene("SStage6");
+                        ChangeScene("SStage6");
                     }
                     break;
                 case (int)E_STAGE.E_MAX:
-                    if (HGameMng.I.SBombScrp.bBombDie == true)
+                    if (HGameMng.I.SBombScrp.bBombDie)
                     {
-                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex == 5)
-                            HStageMng.I.ChangeScene("SLastScene");
+                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex.Equals(5))
+                            ChangeScene("SLastScene");
                     }
                     else
                     {
-                        HStageMng.I.ChangeScene("SLastScene");
+                        ChangeScene("SLastScene");
                     }
                     break;
             }

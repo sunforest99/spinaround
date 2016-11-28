@@ -21,7 +21,7 @@ public class SEyeMove : MonoBehaviour
     // Update is called once per frame
     void Update()       // 부모의 위치를 받아서 부모의 기준으로 돌리기
     {
-        if (HGameMng.I.bPlayerDie == true)
+        if (HGameMng.I.bPlayerDie)
             Move();
     }
 

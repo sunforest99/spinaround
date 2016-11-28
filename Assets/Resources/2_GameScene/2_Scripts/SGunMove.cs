@@ -39,12 +39,12 @@ public class SGunMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BitSAni.frameIndex == 4)
+        if (BitSAni.frameIndex.Equals(4))
         {
             sPlayerSprite.enabled = false;
         }
 
-        if (BitSAni.frameIndex == 8)
+        if (BitSAni.frameIndex.Equals(8))
         {
             BitSprite.enabled = false;
         }
@@ -75,12 +75,12 @@ public class SGunMove : MonoBehaviour
 
     void Key()
     {
-        if (Input.GetKeyDown(KeyCode.A))     // 치튼
+        if (Input.GetKeyDown(KeyCode.A))     // 치트
         {
             PlayerBox.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))     // 치튼
+        if (Input.GetKeyDown(KeyCode.S))     // 치트
         {
             PlayerBox.enabled = true;
         }

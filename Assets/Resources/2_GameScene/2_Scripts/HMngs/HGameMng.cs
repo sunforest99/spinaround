@@ -83,7 +83,7 @@ public class HGameMng : HSingleton<HGameMng>
     void Update()
     {
 
-        if (bPlayerDie == true && nStage < (int)E_STAGE.E_MAX)
+        if (bPlayerDie && nStage < (int)E_STAGE.E_MAX)
         {
             fResultTime += Time.deltaTime;
         }

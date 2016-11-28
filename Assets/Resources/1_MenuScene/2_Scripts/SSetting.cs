@@ -16,7 +16,7 @@ public class SSetting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(HMng.I.bSoundCheck == false)
+        if(!HMng.I.bSoundCheck)
         {
             SoundBtnSprite.spriteName = "Sound";
             HSoundMng.I.Stop(false);
@@ -28,19 +28,19 @@ public class SSetting : MonoBehaviour
             SoundBtnSprite.spriteName = "unSound";
         }
 
-        if (HMng.I.bSettingCheck == true && bcheck == false)
+        if (HMng.I.bSettingCheck && !bcheck)
         {
             SettingAni.Play("SettingAni");
             bcheck = true;
         }
 
-        if (HMng.I.bSettingCheck == false && bcheck == true)
+        if (!HMng.I.bSettingCheck && bcheck)
         {
             SettingAni.Play("SettingoffAni");
             bcheck = false;
         }
 
-        if(HMng.I.bPlayCheck == true && bcheck == true)
+        if(HMng.I.bPlayCheck && bcheck)
         {
             HMng.I.bSettingCheck = false;
             SettingAni.Play("SettingoffAni");

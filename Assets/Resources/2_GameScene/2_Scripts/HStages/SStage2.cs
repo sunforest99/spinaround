@@ -58,7 +58,7 @@ public class SStage2 : HState
             }
         }
 
-        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.25f) /*&& HGameMng.I.bTimeScale == true*/ && HGameMng.I.bPlayerDie == true)
+        if (HGameMng.I.TimeCtrl((int)E_TIME.E_MONSTER_TIME, 0.25f) && HGameMng.I.bPlayerDie)
             Create();
 
         if (HGameMng.I.nMonDieCont >= HGameMng.I.nStageMonMax[0])      // 몬스터가 다 죽으면 스테이지 넘어가기

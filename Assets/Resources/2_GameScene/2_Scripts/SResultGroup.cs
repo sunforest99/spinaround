@@ -30,7 +30,7 @@ public class SResultGroup : MonoBehaviour
 
     void SetPos()
     {
-        if(HGameMng.I.bPlayerDie == false)
+        if(!HGameMng.I.bPlayerDie)
         {
             transform.localPosition = Vector3.zero;
         }

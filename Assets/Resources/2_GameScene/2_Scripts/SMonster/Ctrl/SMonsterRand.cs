@@ -24,21 +24,21 @@ public class SMonsterRand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bDie == true)
+        if (bDie)
         {
-            if (bPosCheck == true && HGameMng.I.bTimeScale == true)     // 몬스터 스프라이트 켜주고 날라가기
+            if (bPosCheck && HGameMng.I.bTimeScale)     // 몬스터 스프라이트 켜주고 날라가기
             {
                 SMonsterSprite.enabled = true;
                 transform.Translate(transform.right * HGameMng.I.fMonSpeed * Time.deltaTime);
             }
         }
 
-        if (bPosCheck == false)     // 몬스터 돌면서 체력세팅
+        if (!bPosCheck)     // 몬스터 돌면서 체력세팅
         {
             transform.Rotate(0f, 0f, 10f);
         }
 
-        if (bPosCheck == false || bDie == false)        // 몬스터가 죽어있을때 스프라이트 끄기
+        if (!bPosCheck || !bDie)        // 몬스터가 죽어있을때 스프라이트 끄기
         {
             SMonsterSprite.enabled = false;
         }

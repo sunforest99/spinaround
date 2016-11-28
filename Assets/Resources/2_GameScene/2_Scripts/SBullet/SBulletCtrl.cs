@@ -23,7 +23,7 @@ public class SBulletCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bDie == true)       // bDie 가 true 일때 날라가기
+        if (bDie)       // bDie 가 true 일때 날라가기
         {
             transform.localPosition = Vector2.Lerp(transform.localPosition, Vector2.zero, fSpeed * Time.deltaTime);
         }

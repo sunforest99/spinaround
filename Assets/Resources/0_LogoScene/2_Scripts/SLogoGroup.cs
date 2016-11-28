@@ -14,7 +14,7 @@ public class SLogoGroup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LogoTween.enabled == false)
+        if (!LogoTween.enabled)
         {
             HSoundMng.I.Play("Psychedelic-trip", true, true);
 

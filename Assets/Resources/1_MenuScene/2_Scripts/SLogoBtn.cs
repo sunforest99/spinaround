@@ -53,7 +53,7 @@ public class SLogoBtn : MonoBehaviour
     {
         HSoundMng.I.Play("Button Push");
         Debug.Log("Setting");
-        if (HMng.I.bSettingCheck == false)
+        if (!HMng.I.bSettingCheck)
             HMng.I.bSettingCheck = true;
         else
             HMng.I.bSettingCheck = false;
@@ -75,7 +75,7 @@ public class SLogoBtn : MonoBehaviour
     public void Sound()
     {
         HSoundMng.I.Play("Button Push");
-        if (HMng.I.bSoundCheck == false)
+        if (!HMng.I.bSoundCheck)
         {
             HMng.I.bSoundCheck = true;
             // HSoundMng.I.Stop();
