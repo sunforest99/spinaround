@@ -31,6 +31,7 @@ public class HMng : HSingleton<HMng>
     void Update()
     {
 
+
     }
 
     void OnDestroy()

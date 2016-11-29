@@ -36,7 +36,7 @@ public class SStage1 : HState
             MouthAni.enabled = true;
         }
 
-        if(MouthAni.frameIndex.Equals(4))
+        if(MouthAni.frameIndex == 4)
         {
             HGameMng.I.bTimeScale = true;
         }

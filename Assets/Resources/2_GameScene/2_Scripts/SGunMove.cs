@@ -39,12 +39,12 @@ public class SGunMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BitSAni.frameIndex.Equals(4))
+        if (BitSAni.frameIndex == 4)
         {
             sPlayerSprite.enabled = false;
         }
 
-        if (BitSAni.frameIndex.Equals(8))
+        if (BitSAni.frameIndex == 8)
         {
             BitSprite.enabled = false;
         }

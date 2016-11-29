@@ -4,7 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using MHomiLibrary;
 
-public class HStageMng : HSingletonScene<HStageMng> {
+public class HStageMng : HSingletonScene<HStageMng>
+{
 
     protected HStageMng() { }
 
@@ -21,7 +22,7 @@ public class HStageMng : HSingletonScene<HStageMng> {
 
     void Start()
     {
-        ChangeScene("HStage1");        
+        ChangeScene("HStage1");
     }
 
     void OnDestroy()
@@ -59,7 +60,7 @@ public class HStageMng : HSingletonScene<HStageMng> {
                 case (int)E_STAGE.E_STAGE6:
                     if (HGameMng.I.SBombScrp.bBombDie)
                     {
-                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex.Equals(5))
+                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex == 5)
                             ChangeScene("SStage6");
                     }
                     else
@@ -70,7 +71,7 @@ public class HStageMng : HSingletonScene<HStageMng> {
                 case (int)E_STAGE.E_MAX:
                     if (HGameMng.I.SBombScrp.bBombDie)
                     {
-                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex.Equals(5))
+                        if (HGameMng.I.SBombScrp.BombSAni.frameIndex == 5)
                             ChangeScene("SLastScene");
                     }
                     else
